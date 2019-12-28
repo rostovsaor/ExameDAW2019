@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 /**
  *
@@ -20,6 +22,9 @@ public class Category implements Serializable{
     @GeneratedValue
     private Integer id;
     private String nome;
+    
+    @OneToMany(mappedBy = "category")
+    private Set<Article> article;
 
     public Category() {
     }
@@ -38,6 +43,14 @@ public class Category implements Serializable{
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Set<Article> getArticle() {
+        return article;
+    }
+
+    public void setArticle(Set<Article> article) {
+        this.article = article;
     }
     
     

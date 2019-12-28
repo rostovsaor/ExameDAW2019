@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -21,6 +23,14 @@ public class Article implements Serializable{
     private Integer id;
     private String title;
     private String content;
+    
+    @ManyToOne
+    @JoinColumn(name="client_id", nullable=false)
+    private Client client;
+    
+    @ManyToOne
+    @JoinColumn(name="article_id", nullable=false)
+    private Article article; 
 
     public Article() {
     }
@@ -47,6 +57,22 @@ public class Article implements Serializable{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
     }
     
     

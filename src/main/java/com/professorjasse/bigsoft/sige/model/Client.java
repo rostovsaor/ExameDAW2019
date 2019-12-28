@@ -6,6 +6,7 @@
 package com.professorjasse.bigsoft.sige.model;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,17 +17,18 @@ import javax.persistence.OneToMany;
  * @author Admin
  */
 @Entity
-public class User implements Serializable{
+public class Client implements Serializable{
     @Id
     @GeneratedValue
     private Integer id;
-    private String nome;
+    private String name;
     private String login;
     private String password;
     
+    @OneToMany(mappedBy = "client")
+    private Set<Article> article;
     
-
-    public User() {
+    public Client() {
     }
 
     public Integer getId() {
@@ -37,12 +39,12 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
@@ -60,7 +62,13 @@ public class User implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
+
+    public Set<Article> getArticle() {
+        return article;
+    }
+
+    public void setArticle(Set<Article> article) {
+        this.article = article;
+    }
     
 }

@@ -15,12 +15,14 @@ import javax.validation.constraints.NotNull;
  *
  * @author Erminio Jasse
  */
-@Entity
-@Table (name="tb_usuario")/*, uniqueConstraints={
+//@Entity
+//@Table (name="tb_usuario")
+/*, 
+uniqueConstraints={
     @UniqueConstraint(columnNames={"usu_telefone1", "usu_telefone2"}, name="uk_usuariotelefone")
 })*/
 
-public class Usuario implements Serializable{
+public class Usuario /*implements Serializable*/{
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY) 
