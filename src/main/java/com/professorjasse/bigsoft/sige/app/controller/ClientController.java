@@ -28,15 +28,15 @@ public class ClientController {
     private Client ClientObj;
 
     @Inject
-    public void ClientController(Result result, ClientDAO dao, LoggedClient loggedClient, Client ClientObj) {
+    public ClientController(Result result, ClientDAO dao, LoggedClient loggedClient, Client ClientObj) {
         this.result = result;
         this.dao = dao;
         this.loggedClient = loggedClient;
         this.ClientObj = ClientObj;
     }
     
-    public void ClientController() {
-        
+    public ClientController() {
+        this(null, null, null, null);
     }
     
     @Get
@@ -52,6 +52,16 @@ public class ClientController {
     @Post
     public void create(Client client) {
         dao.create(client);
+    }
+    
+    @Get
+    public void login() {
+        
+    }
+    
+    @Get
+    public void auth() {
+        
     }
 
 

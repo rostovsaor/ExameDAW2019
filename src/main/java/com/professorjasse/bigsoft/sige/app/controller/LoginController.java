@@ -20,7 +20,7 @@ public class LoginController {
     protected LoginController() {
 	this(null);
     }
-	
+            
     @Inject
     public LoginController(Result result) {
         this.result = result;
@@ -28,5 +28,6 @@ public class LoginController {
 
     @Path({"/", "/login"})
     public void login() {
+        result.include("mess", "o");
     }
 }

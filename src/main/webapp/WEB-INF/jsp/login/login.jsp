@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,5 +15,16 @@
     </head>
     <body>
         <h1>Seu formulario Login aqui!</h1>
+        <%@ include file="../templates/aa.jsp" %>    
+        <%@ include file="../../../resources/templates/newjsp.jsp" %>
+
+        <a href="<c:url value='/article/article'/>">Artigos</a>
+        
+        <form action="">
+            <input type="text" name="user" placeholder="User">
+            <input type="password" name="pass" placeholder="Password">
+            <input type="submit" value="OK">
+        </form>
+        
     </body>
 </html>

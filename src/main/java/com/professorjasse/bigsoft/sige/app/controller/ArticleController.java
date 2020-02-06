@@ -8,6 +8,7 @@ package com.professorjasse.bigsoft.sige.app.controller;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Result;
 import com.professorjasse.bigsoft.sige.dao.ArticleDAO;
 import com.professorjasse.bigsoft.sige.model.Article;
 import javax.inject.Inject;
@@ -19,20 +20,22 @@ import javax.inject.Inject;
 @Controller
 public class ArticleController {
     private final ArticleDAO articleDAO;
+    private Result result;
     
     @Inject
-    public ArticleController(ArticleDAO articleDAO) {
+    public ArticleController(ArticleDAO articleDAO, Result result) {
         this.articleDAO = articleDAO;
+        this.result = result;
     }
 
     public ArticleController() {
-        this(null);
+        this(null, null);
     }
     
     
     @Get
-    public void newArticle() {
-    
+    public void article() {
+        
     }
 
     @Post

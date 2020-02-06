@@ -29,8 +29,8 @@ public class Article implements Serializable{
     private Client client;
     
     @ManyToOne
-    @JoinColumn(name="article_id", nullable=false)
-    private Article article; 
+    @JoinColumn(name="category_id", nullable=false)
+    private Category category; 
 
     public Article() {
     }
@@ -67,13 +67,15 @@ public class Article implements Serializable{
         this.client = client;
     }
 
-    public Article getArticle() {
-        return article;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setArticle(Article article) {
-        this.article = article;
+    public void setCategory(Category category) {
+        this.category = category;
     }
+
+
     
     
 }
