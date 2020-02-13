@@ -30,4 +30,10 @@ public class LoginController {
     public void login() {
         result.include("mess", "o");
     }
+    
+    @Get
+    public void auth() {
+        
+    }
+    
 }
